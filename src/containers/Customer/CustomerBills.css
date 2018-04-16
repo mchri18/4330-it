@@ -1,0 +1,35 @@
+#billSection {
+  padding: 2em;
+}
+
+#billSection h2{
+  padding-left: 6em;
+}
+
+#billSection h3{
+  padding-left: 10em;
+}
+
+.customer, .customerName{
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.tech, .techName{
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.rate, .techRate{
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.hours, .techHours{
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.total{
+  margin-top: 0px;
+}
