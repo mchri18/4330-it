@@ -1,0 +1,89 @@
+{
+  "name": "4330-it",
+  "version": "0.1.0",
+  "private": true,
+  "description": "IT service request tool",
+  "main": "index.js",
+  "repository": "https://github.com/mchri18/4330.git",
+  "author": {
+    "name": "Michael Christian",
+    "email": "mchri18@lsu.edu",
+    "url": "https://github.com/mchri18"
+  },
+  "contributors": [
+    {
+      "name": "Matthew Cabrera",
+      "email": "mattcabrera2014@yahoo.com",
+      "url": "https://github.com/MattCab"
+    },
+    {
+      "name": "Johathan Cangelosi",
+      "email": "jrcan1998@msn.com",
+      "url": "https://github.com/guido3245"
+    },
+    {
+      "name": "Kenny Bui",
+      "email": "kbui7@lsu.edu",
+      "url": "https://github.com/kbui314"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.1.1",
+    "apollo-client": "^2.0.3",
+    "apollo-link": "^1.0.3",
+    "apollo-link-context": "^1.0.1",
+    "apollo-link-http": "^1.2.0",
+    "apollo-link-ws": "^1.0.1",
+    "apollo-server-express": "^1.1.7",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "chart.js": "^1.1.1",
+    "cors": "^2.8.4",
+    "downshift": "^1.20.0",
+    "enzyme": "^3.2.0",
+    "express": "^4.16.2",
+    "fbjs": "^0.8.16",
+    "formik": "^0.10.5",
+    "graphql": "^0.11.7",
+    "graphql-subscriptions": "^0.5.5",
+    "graphql-tag": "^2.5.0",
+    "graphql-tools": "^2.5.1",
+    "jsonwebtoken": "^8.1.0",
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.4",
+    "merge-graphql-schemas": "^1.2.0",
+    "mobx": "^3.3.1",
+    "mobx-react": "^4.3.3",
+    "pg": "^7.3.0",
+    "pg-hstore": "^2.3.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.3.1",
+    "react-apollo": "^2.0.1",
+    "react-chartjs": "^1.2.0",
+    "react-dom": "^16.3.1",
+    "react-draggable": "^3.0.5",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.14",
+    "react-scrollchor": "^4.0.0",
+    "redux": "^3.7.2",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.75.1",
+    "sequelize": "^4.15.0",
+    "styled-components": "^2.2.3",
+    "subscriptions-transport-ws": "^0.9.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "server": "nodemon --exec babel-node ./server/index.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "nodemon": "^1.12.1"
+  }
+}
