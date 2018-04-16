@@ -14,8 +14,8 @@ MODEL Computing services is a IT support company that allows its users to reques
 1. Run the following commands to get started:
 
 * ```sh
-  $ git clone https://github.com/mchri18/4330.git
-  $ cd 4330
+  $ git clone https://github.com/mchri18/4330-it.git
+  $ cd 4330-it
   ```
 
 2. Start the frontend:
