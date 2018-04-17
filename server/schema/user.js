@@ -29,6 +29,7 @@ export default `
     ok: Boolean!
     token: String
     refreshToken: String
+    id: Int
     errors: [Error!]
   }
 
