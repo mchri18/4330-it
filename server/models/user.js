@@ -37,7 +37,9 @@ export default (sequelize, DataTypes) => {
           }
         }
       },
-      // manager: DataTypes.STRING,
+      //  manager: {
+      //   type: DataTypes.Boolean,
+      //  }
       // subscriptionType: DataTypes.STRING
     },
     {
