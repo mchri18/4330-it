@@ -33,7 +33,7 @@ return (
     </div>
 );
 
-
+}
 export default graphql(meQuery, { options: { fetchPolicy: 'network-only' } })(
     Account,
 );
