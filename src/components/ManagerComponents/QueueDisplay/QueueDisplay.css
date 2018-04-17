@@ -1,0 +1,29 @@
+#QueueDisplay{
+  padding-top: 2em;
+  padding-bottom: 10em;
+  text-align: center;
+}
+
+#Customers{
+  padding: 2em;
+  text-align: left;
+}
+
+
+.Drag{
+  background: rgba(29, 209, 105, .5);
+  border: 1px solid #999;
+  border-radius: 3px;
+  width: 110px;
+  height: 110px;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+
+.handle{
+  cursor: ew-resize;
+  border: 10px solid #999;
+  border-color: black;
+  background: black;
+}
