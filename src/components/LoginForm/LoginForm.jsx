@@ -31,17 +31,19 @@ class Login extends Component {
       variables: { email, password },
     });
 
-    const { ok, token, refreshToken, errors, userid } = response.data.login;
+    const { ok, token, refreshToken, errors } = response.data.login;
+
+    var managers = ['test@test.com'];
+    var techs = ['technician@test.com'];
 
     if (ok) {
       localStorage.setItem('token', token);
       localStorage.setItem('refreshToken', refreshToken);
       console.log('token from login: ', token);
       console.log('rtoken from login: ', refreshToken);
-      console.log('id', userid)
-      if (email === 'test@test.com') {
+      if (managers.includes(email)) {
         this.props.history.push('/manager');
-      } else if (email === 'technician@test.com') {
+      } else if (techs.includes(email)) {
         this.props.history.push('/technician');
       } else {
         this.props.history.push('/customer');
