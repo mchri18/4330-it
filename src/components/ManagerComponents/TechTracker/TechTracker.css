@@ -1,0 +1,11 @@
+#TechTracker{
+    padding: 2em;
+    text-align: center;
+}
+
+#cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans';
+}

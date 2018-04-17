@@ -1,0 +1,32 @@
+#Reports{
+  text-align: center;
+}
+
+#header{
+  padding-top: 8em;
+  padding-bottom: 4em;
+}
+
+#MonthlyReports{
+  padding-left: 2em;
+  padding-bottom: 4em;
+  text-align: left;
+}
+
+
+#BarChart{
+  display: flex;
+  height: auto;
+  padding-left: auto;
+  padding-right: 4em;
+  padding-top: 4em;
+  padding-bottom: 8em;
+}
+
+/*h2, p {*/
+  /*display: inline-block;*/
+  /*padding-left: 15px;*/
+/*}*/
+
+/*h4 {*/
+  /*margin: 0px;*/
