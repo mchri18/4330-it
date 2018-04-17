@@ -10,7 +10,7 @@ class Tech extends Component {
   render() {
 
     const menuItemsLeft = [
-      { key: 'home', to: '/account', content: 'MODEL Computing' },
+      { key: 'home', to: '#', content: 'MODEL Computing' },
       { key: 'request', to: '/technician', content: 'Requests' },
       { key: 'billgenerator', to: '/technicianBilling', content: 'Bill Generator' },
     ];

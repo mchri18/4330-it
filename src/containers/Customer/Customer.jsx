@@ -34,7 +34,7 @@ class CustomerPage extends React.Component {
 
   render() {
     const menuItemsLeft = [
-      { key: 'home', to: '/account', content: 'MODEL Computing' },
+      { key: 'home', to: '#', content: 'MODEL Computing' },
       { key: 'service', to: '/service', content: 'Service Request' },
       { key: 'bill', to: '/customerBills', content: 'Bills' },
     ];
