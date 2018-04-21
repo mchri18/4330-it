@@ -33,8 +33,8 @@ class Login extends Component {
 
     const { ok, token, refreshToken, errors } = response.data.login;
 
-    var managers = ['test@test.com', 'manager@test.com'];
-    var techs = ['technician@test.com'];
+    var managers = ['test@test.com', 'manager@model.com'];
+    var techs = ['technician@test.com', 'tim.a@model.com'];
 
     if (ok) {
       localStorage.setItem('token', token);

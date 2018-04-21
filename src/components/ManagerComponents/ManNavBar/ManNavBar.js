@@ -6,7 +6,7 @@ import style from './ManNavBar.css';
 
 const menuItemsLeft = [
     { key: 'manager', to: '#', content: 'Manager Page' },
-    { key: 'techtracker', to: '#techtracker', content: 'Tech Tracker' },
+    { key: 'techtracker', to: '#techtracker', content: 'Tech Profile' },
     { key: 'queueqisplay', to: '#queueqisplay', content: 'Queue Display' },
     { key: 'reports', to: '#reports', content: 'Reports' },
 ];

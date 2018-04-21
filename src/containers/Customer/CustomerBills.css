@@ -2,12 +2,21 @@
   padding: 2em;
 }
 
+#billSection h1{
+  font-size: 5em;
+}
+
 #billSection h2{
+  font-size: 3em;
   padding-left: 6em;
 }
 
 #billSection h3{
-  padding-left: 10em;
+  font-size: 2em;
+}
+
+.techHours, .customerName, .rate, .techName {
+  font-size: 1.5em;
 }
 
 .customer, .customerName{
@@ -31,5 +40,6 @@
 }
 
 .total{
+  padding-left: 15px;
   margin-top: 0px;
 }

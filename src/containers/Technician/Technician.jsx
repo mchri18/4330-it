@@ -3,23 +3,72 @@ import { NavLink } from 'react-router-dom';
 import { Menu, Container, Table } from 'semantic-ui-react';
 import style from './Technician.css';
 import list from '../../components/database/queue';
+import { acceptMan } from '../../components/ManagerComponents/QueueDisplay/QueueDisplay';
 
 var list1 = [];
 var i;
 for (i = 0; i < list.length; i++) {
-  list1.push({ order: i, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
+  list1.push({ order: i + 1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
 }
 
 export function helpTech() {
-  for (i ; i < list.length; i++) {
-    list1.push({ order: i+1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
+  for (i; i < list.length; i++) {
+    list1.push({ order: i + 1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
   }
   console.log('help worked Tech');
 }
 
+function acceptTech() {
+  list1 = []
+  list.reverse()
+  list.pop()
+  list.reverse()
+  for (i = 0; i < list.length; i++) {
+    list1.push({ order: i + 1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
+  }
+  console.log('reset table');
+}
+
 
 console.log(list);
+
+
+class Popup extends React.Component {
+  render() {
+    return (
+      <div className='popup'>
+        <div className='popup_inner'>
+          <h1>{this.props.text}</h1>
+          <button onClick={this.props.closePopup}>OK</button>
+        </div>
+      </div>
+    );
+  }
+}
+
 class Tech extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      showPopup: false,
+      order: ''
+    }
+
+    this.onClick = this.onClick.bind(this)
+  }
+
+  onClick = e => {
+    e.preventDefault();
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+    if (this.state.showPopup) {
+      acceptTech()
+      acceptMan()
+      console.log("clicked")
+    }
+  }
 
   render() {
 
@@ -76,7 +125,7 @@ class Tech extends Component {
           </div>
         </div>
         <div id='table'>
-          <Table celled selectable>
+          <Table celled selectable onClick={this.onClick}>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Order</Table.HeaderCell>
@@ -101,6 +150,13 @@ class Tech extends Component {
             </Table.Body>
           </Table>
         </div>
+        {this.state.showPopup ?
+          <Popup
+            text='Request Accepted'
+            closePopup={this.onClick.bind(this)}
+          />
+          : null
+        }
       </div>
     );
   }

@@ -67,72 +67,18 @@ class CustomerBills extends React.Component {
             </div>
             <div>
               <h3 class='tech'>Technician Name:</h3>
-              <p class='techName'>John Doe</p>
+              <p class='techName'>Tim A.</p>
             </div>
             <div>
               <h3 class='techRate'>Technician Rate:</h3>
-              <p class='rate'>$30</p>
-            </div>
-            <div>
-              <h3 class='hours'>Technician Hours:</h3>
-              <p class='techHours'>10</p>
-            </div>
-            <h3 class='total'>Total: $300</h3>
-          </div>
-          <h2>Bill #2</h2>
-          <div>
-              <h3 class='customer'>Customer:</h3>
-              <p class='customerName'>LSU</p>
-            </div>
-            <div>
-              <h3 class='tech'>Technician Name:</h3>
-              <p class='techName'>Jane Doe</p>
-            </div>
-            <div>
-              <h3 class='techRate'>Technician Rate:</h3>
-              <p class='rate'>$40</p>
-            </div>
-            <div>
-              <h3 class='hours'>Technician Hours:</h3>
-              <p class='techHours'>12</p>
-            </div>
-            <h3 class='total'>Total: $480</h3>
-          <h2>Bill #3</h2>
-          <div>
-              <h3 class='customer'>Customer:</h3>
-              <p class='customerName'>LSU</p>
-            </div>
-            <div>
-              <h3 class='tech'>Technician Name:</h3>
-              <p class='techName'>Nathan Brener</p>
-            </div>
-            <div>
-              <h3 class='techRate'>Technician Rate:</h3>
-              <p class='rate'>$100</p>
-            </div>
-            <div>
-              <h3 class='hours'>Technician Hours:</h3>
-              <p class='techHours'>8</p>
-            </div>
-            <h3 class='total'>Total: $800</h3>
-          <h2>Bill #4</h2>
-          <div>
-              <h3 class='customer'>Customer:</h3>
-              <p class='customerName'>LSU</p>
-            </div>
-            <div>
-              <h3 class='tech'>Technician Name:</h3>
-              <p class='techName'>John Doe</p>
-            </div>
-            <div>
-              <h3 class='techRate'>Technician Rate:</h3>
-              <p class='rate'>$30</p>
+              <p class='rate'>$60</p>
             </div>
             <div>
               <h3 class='hours'>Technician Hours:</h3>
               <p class='techHours'>1</p>
             </div>
-            <h3 class='total'>Total: $30</h3>
+            <h3 class='total'>Total: $60</h3>
+          </div>
         </div>
         <Footer />
       </div>

@@ -6,25 +6,37 @@ import list from '../../database/queue';
 var list1 = [];
 var i;
 for (i = 0; i < list.length; i++) {
-  list1.push({order: i, id: list[i][1], 
-            difficulty: list[i][2], 
-            company: list[i][3], 
-            description: list[i][4],
-            requestentered:list[i][5]},)
+  list1.push({
+    order: i+1, id: list[i][1],
+    difficulty: list[i][2],
+    company: list[i][3],
+    description: list[i][4],
+    requestentered: list[i][5]
+  }, )
 }
 
 export function helpManager() {
-  for (i ; i < list.length; i++) {
+  for (i; i < list.length; i++) {
     list1.push({ order: i+1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
   }
   console.log('help worked manager');
 }
 
-const QueueDisplay = () =>(
-  <div id="QueueDisplay">
-	  <h1>Queue Display </h1>
-    <h3>Click on a job to move to the top of the queue</h3>
-      <div id='table'>
+export function acceptMan() {
+  list1 = []
+  for (i = 0; i < list.length; i++) {
+    list1.push({ order: i + 1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
+  }
+  console.log('reset table');
+}
+
+class QueueDisplay extends React.Component {
+  render() {
+    return (
+      <div id="QueueDisplay">
+        <h1>Queue Display </h1>
+        <h3>Click on a job to move to the top of the queue</h3>
+        <div id='table'>
           <Table celled selectable>
             <Table.Header>
               <Table.Row>
@@ -50,7 +62,9 @@ const QueueDisplay = () =>(
             </Table.Body>
           </Table>
         </div>
-  </div>
-);
+      </div>
+    );
+  }
+}
 
 export default QueueDisplay;

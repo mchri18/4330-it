@@ -55,7 +55,7 @@ export default class CustomerPage extends React.Component {
       showPopup: !this.state.showPopup
     });
     if (this.state.showPopup) {
-      list.push([1, JobID, this.state.Difficulty, this.state.Company, this.state.Description, date, false]);
+      list.push([1, JobID, this.state.Difficulty, this.state.Company, this.state.Description, date]);
       JobID++;
       helpTech()
       helpManager()

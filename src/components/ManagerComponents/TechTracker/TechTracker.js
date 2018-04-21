@@ -6,7 +6,7 @@ import people from './people';
 
 const TechTracker = (props) => (
     <div id="TechTracker">
-        <h1>Technician Tracker</h1>
+        <h1>Technician Profile</h1>
     <div id = "cards">
         <CardStack
             height={500}
