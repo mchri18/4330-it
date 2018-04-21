@@ -28,6 +28,7 @@ const TechTracker = (props) => (
 );
 
 const ProfilePicture = ({ imgSrc, borderColor }) => (
+    //eslint-disable-next-line
     <img
         style={{
             width: '90px',

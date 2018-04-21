@@ -3,9 +3,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from '../../containers/HomePage/HomePage';
 import RegistrationPage from '../../containers/RegistrationPage/RegistrationPage';
 import LoginPage from '../../containers/LoginPage/LoginPage';
-import CreateTeam from '../../containers/CreateTeam';
-import ViewTeam from '../../containers/ViewTeam';
-import DirectMessages from '../../containers/DirectMessages';
 import AccountHome from '../../containers/Account/Account';
 import CustomerHome from '../../containers/Customer/Customer';
 import CustomerBills from '../../containers/Customer/CustomerBills';
@@ -53,8 +50,6 @@ class App extends Component {
         <Route path="/" exact component={HomePage} />
         <Route path="/register" exact component={RegistrationPage} />
         <Route path="/login" exact component={LoginPage} />
-        <PrivateRoute path="/view-team/user/:teamId/:userId" exact component={DirectMessages} />
-        <PrivateRoute path="/view-team/:teamId?/:channelId?" exact component={ViewTeam} />
         <PrivateRoute path="/view-schedule/:userId?" exact component={AccountCalendar} />
         <PrivateRoute path="/customer/:userId?" exact component={CustomerHome} />
         <PrivateRoute path="/customerBills/:userId?" exact component={CustomerBills} />
@@ -62,8 +57,6 @@ class App extends Component {
         <PrivateRoute path="/technicianBilling/:userId?" exact component={TechnicianBilling} />
         <PrivateRoute path="/manager/:userId?" exact component={ManagerHome} />
         <PrivateRoute path="/account/:userId?" exact component={AccountHome} />
-        {/*how to make optional parameters*/}
-        <PrivateRoute path="/create-team" exact component={CreateTeam} />
       </Switch>
     );
   }

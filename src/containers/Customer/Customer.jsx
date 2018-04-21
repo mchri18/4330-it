@@ -3,34 +3,74 @@ import { Form, Menu, Container, Grid } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import style from '../../components/Navbar/Navbar.css';
+import list from '../../components/database/queue';
+import { helpTech } from '../Technician/Technician';
+import { helpManager } from '../../components/ManagerComponents/QueueDisplay/QueueDisplay';
 import './Customer.css';
 
-class Popup extends React.Component {
+//current date and time
+var currentdate = new Date();
+var date = currentdate.getDate() + "/"
+  + (currentdate.getMonth() + 1) + "/"
+  + currentdate.getFullYear() + " @ "
+  + currentdate.getHours() + ":"
+  + currentdate.getMinutes() + ":"
+  + currentdate.getSeconds();
+
+//entries
+var JobID = 100;
+
+
+class Popup extends React.Component {
   render() {
     return (
       <div className='popup'>
         <div className='popup_inner'>
           <h1>{this.props.text}</h1>
-        <button onClick={this.props.closePopup}>OK</button>
+          <button onClick={this.props.closePopup}>OK</button>
         </div>
       </div>
     );
   }
 }
 
-class CustomerPage extends React.Component {
+
+export default class CustomerPage extends React.Component {
 
   constructor() {
-    super();
+    super()
     this.state = {
-      showPopup: false
-    };
+      showPopup: false,
+      Company: '',
+      Description: '',
+      Difficulty: '',
+    }
+
+    this.onChange = this.onChange.bind(this)
   }
-  togglePopup() {
+
+  togglePopup(e) {
+    e.preventDefault();
     this.setState({
       showPopup: !this.state.showPopup
     });
+    if (this.state.showPopup) {
+      list.push([1, JobID, this.state.Difficulty, this.state.Company, this.state.Description, date, false]);
+      JobID++;
+      helpTech()
+      helpManager()
+    }
   }
+
+  onChange = e => {
+    const target = e.target
+    const value = target.value
+    const name = target.name
+
+    this.setState({
+      [name]: value
+    })
+  };
 
   render() {
     const menuItemsLeft = [
@@ -149,6 +189,8 @@ class CustomerPage extends React.Component {
                 name="Company"
                 type='text'
                 placeholder="Company Name"
+                value={this.state.value}
+                onChange={this.onChange}
               />
               <Form.Group widths='equal'>
                 <Form.Input
@@ -193,16 +235,19 @@ class CustomerPage extends React.Component {
                 />
               </Form.Group>
               <Form.Input
-                label='Problem'
-                name="Problem"
-                type='text'
-                placeholder="Problem type"
-              />
-              <Form.TextArea
-                label='Description of the problem'
+                label='Problem Description'
                 name="Description"
                 type='text'
-                placeholder="Descritption of the problem"
+                placeholder="Problem description"
+                value={this.state.value}
+                onChange={this.onChange}
+              />
+              <Form.Input
+                label='Difficulty of the problem 1(easiest) - 3(hardest)'
+                name="Difficulty"
+                placeholder="Difficulty of the problem"
+                value={this.state.value}
+                onChange={this.onChange}
               />
             </Form>
             <Form.Button id='button' onClick={this.togglePopup.bind(this)}>Submit</Form.Button>
@@ -221,5 +266,4 @@ class CustomerPage extends React.Component {
   }
 }
 
-
-export default CustomerPage;
+console.log(list)

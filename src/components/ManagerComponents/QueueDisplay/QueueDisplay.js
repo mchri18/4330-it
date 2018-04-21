@@ -1,149 +1,55 @@
 import React from "react";
+import { Table } from 'semantic-ui-react';
 import './QueueDisplay.css';
-import Draggable from 'react-draggable';
+import list from '../../database/queue';
 
+var list1 = [];
+var i;
+for (i = 0; i < list.length; i++) {
+  list1.push({order: i, id: list[i][1], 
+            difficulty: list[i][2], 
+            company: list[i][3], 
+            description: list[i][4],
+            requestentered:list[i][5]},)
+}
+
+export function helpManager() {
+  for (i ; i < list.length; i++) {
+    list1.push({ order: i+1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
+  }
+  console.log('help worked manager');
+}
 
 const QueueDisplay = () =>(
   <div id="QueueDisplay">
 	  <h1>Queue Display </h1>
-      <div id="Customers">
-	  <h2>Customers</h2>
-	  </div>
-      <Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[10, 10]}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-		  <div className="Drag">
-              <div className="handle"></div>
-              <div>Nancy Stevens</div>
-          </div>
-      </Draggable>
-
-      <Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[10, 10]}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-          <div className="Drag">
-              <div className="handle"></div>
-              <div>Thomas Kip</div>
-          </div>
-      </Draggable>
-
-      <Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[10, 10]}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-          <div className="Drag">
-              <div className="handle"></div>
-              <div>Mike Richards</div>
-          </div>
-      </Draggable>
-
-      <Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[10, 10]}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-          <div className="Drag">
-              <div className="handle"></div>
-              <div>Jimmy Rolland</div>
-          </div>
-      </Draggable>
-
-      <Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[10, 10]}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-          <div className="Drag">
-              <div className="handle"></div>
-              <div>Eden Hazard</div>
-          </div>
-      </Draggable>
-
-      <Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[10, 10]}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-          <div className="Drag">
-              <div className="handle"></div>
-              <div>Pedro Rodriguez</div>
-          </div>
-      </Draggable>
-
-      <Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[10, 10]}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-          <div className="Drag">
-              <div className="handle"></div>
-              <div>Thibeaut Courtois</div>
-          </div>
-      </Draggable>
-
-      <Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[10, 10]}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-          <div className="Drag">
-              <div className="handle"></div>
-              <div>Zlatan Ibrahimavic</div>
-          </div>
-      </Draggable>
-
-      <Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[10, 10]}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-          <div className="Drag">
-              <div className="handle"></div>
-              <div>Morty</div>
-          </div>
-      </Draggable>
-
+    <h3>Click on a job to move to the top of the queue</h3>
+      <div id='table'>
+          <Table celled selectable>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Order</Table.HeaderCell>
+                <Table.HeaderCell>Job ID</Table.HeaderCell>
+                <Table.HeaderCell>Company</Table.HeaderCell>
+                <Table.HeaderCell>Difficulty</Table.HeaderCell>
+                <Table.HeaderCell>Description</Table.HeaderCell>
+                <Table.HeaderCell>Request Entered</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              {list1.map(item => (
+                <Table.Row>
+                  <Table.Cell>{item.order}</Table.Cell>
+                  <Table.Cell>{item.id}</Table.Cell>
+                  <Table.Cell>{item.company}</Table.Cell>
+                  <Table.Cell>{item.difficulty}</Table.Cell>
+                  <Table.Cell>{item.description}</Table.Cell>
+                  <Table.Cell>{item.requestentered}</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </div>
   </div>
 );
 
