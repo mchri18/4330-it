@@ -20,14 +20,23 @@ export function helpTech() {
 
 function acceptTech() {
   list1 = []
-  // list.reverse()
-  // list.pop()
-  // list.reverse()
-    list.shift();
+   list.reverse()
+   list.pop()
+   list.reverse()
+   // list.shift();
   for (i = 0; i < list.length; i++) {
     list1.push({ order: i + 1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
   }
   console.log('reset table');
+}
+
+
+export function reorderTech() {
+  list1 = []
+  for (i = 0; i < list.length; i++) {
+    list1.push({ order: i + 1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
+  }
+  console.log('reset tech');
 }
 
 
