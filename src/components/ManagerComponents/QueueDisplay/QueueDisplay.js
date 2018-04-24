@@ -2,6 +2,8 @@ import React from "react";
 import { Table } from 'semantic-ui-react';
 import './QueueDisplay.css';
 import list from '../../database/queue';
+import { Form } from 'semantic-ui-react';
+
 
 var list1 = [];
 var i;
@@ -30,12 +32,76 @@ export function acceptMan() {
   console.log('reset table');
 }
 
+export function reordertMan() {
+    list1 = []
+    for (i = 0; i < list.length; i++) {
+        list1.push({ order: i + 1, id: list[i][1], difficulty: list[i][2], company: list[i][3], description: list[i][4], requestentered: list[i][5] }, )
+    }
+    console.log('reset table');
+}
+
+class Popup extends React.Component {
+    render() {
+        return (
+            <div className='popup'>
+            <div className='popup_inner'>
+            <h1>{this.props.text}</h1>
+        <button onClick={this.props.closePopup}>OK</button>
+        </div>
+        </div>
+    );
+    }
+}
+
 class QueueDisplay extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            showPopup: false,
+            JobID: '',
+        }
+
+        this.onChange = this.onChange.bind(this)
+    }
+
+    togglePopup(e) {
+        e.preventDefault();
+        this.setState({
+            showPopup: !this.state.showPopup
+        });
+        if (this.state.showPopup) {
+            // list.push([1, JobID, this.state.Difficulty, this.state.Company, this.state.Description, date]);
+            // JobID++;
+            // helpTech()
+            // helpManager()
+            console.log(this.state.JobID);
+            for (var i = 0; i < list1.length; i++){
+                if(this.state.JobID == list1[i][1]){
+                    console.log("found ID");
+                    var list2 = [];
+                    //store job to be set to top
+                    list2 = list1.splice(0, i);
+                    list1.unshift(list2);
+                    // acceptMan();
+                }
+            }
+        }
+    }
+
+    onChange = e => {
+        const target = e.target
+        const value = target.value
+        const name = target.name
+
+        this.setState({
+                          [name]: value
+        })
+    };
+
   render() {
     return (
       <div id="QueueDisplay">
         <h1>Queue Display </h1>
-        <h3>Click on a job to move to the top of the queue</h3>
         <div id='table'>
           <Table celled selectable>
             <Table.Header>
@@ -62,6 +128,27 @@ class QueueDisplay extends React.Component {
             </Table.Body>
           </Table>
         </div>
+        <div id="Emergency" style='padding: 10px'>
+          <Form id="EmergencyForm">
+              <Form.Input
+                  label='Enter the Job ID to be placed at the top of the Queue'
+                  name="Job"
+                  type='text'
+                  placeholder="Job ID"
+                  value={this.state.value}
+                  onChange={this.onChange}
+                  />
+          </Form>
+                  <Form.Button id='button' onClick={this.togglePopup.bind(this)}>Submit</Form.Button>
+    {this.state.showPopup ?
+    <Popup
+        text='Submitted'
+        closePopup={this.togglePopup.bind(this)}
+        />
+    : null
+    }
+
+    </div>
       </div>
     );
   }
