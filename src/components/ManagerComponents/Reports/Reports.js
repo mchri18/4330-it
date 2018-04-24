@@ -15,7 +15,7 @@ const chartData1 = {
             data: [98]
         },
         {
-            label: "This Week's Average",
+            label: "This Day's Average",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
@@ -37,12 +37,12 @@ const chartData2 = {
             data: [11]
         },
         {
-            label: "This Week's Average",
+            label: "This Day's Average",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
             highlightStroke: "rgba(151,187,205,1)",
-            data: [10]
+            data: [2]
         }
     ]
 };
@@ -59,12 +59,12 @@ const chartData3 = {
             data: [10]
         },
         {
-            label: "This Week's Average",
+            label: "This Day's Average",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
             highlightStroke: "rgba(151,187,205,1)",
-            data: [12]
+            data: [95]
         }
     ]
 };
@@ -81,12 +81,12 @@ const chartData4 = {
             data: [7]
         },
         {
-            label: "This Week's Average",
+            label: "This Day's Average",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
             highlightStroke: "rgba(151,187,205,1)",
-            data: [5]
+            data: [1]
         }
     ]
 };
@@ -103,7 +103,7 @@ const chartData5 = {
             data: [3]
         },
         {
-            label: "This Week's Average",
+            label: "This Day's Average",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
@@ -125,12 +125,12 @@ const chartData6 = {
             data: [7.75]
         },
         {
-            label: "This Week's Average",
+            label: "This Day's Average",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
             highlightStroke: "rgba(151,187,205,1)",
-            data: [7]
+            data: [1]
         }
     ]
 };
@@ -147,12 +147,12 @@ const chartData7 = {
             data: [152]
         },
         {
-            label: "This Week's Average",
+            label: "This Day's Average",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
             highlightStroke: "rgba(151,187,205,1)",
-            data: [163]
+            data: [60]
         }
     ]
 };
@@ -169,12 +169,12 @@ const chartData8 = {
             data: [166, 155, 159, 100]
         },
         {
-            label: "This Week Total Hours Worked",
+            label: "This Day Total Hours Worked",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
             highlightStroke: "rgba(151,187,205,1)",
-            data: [44, 40, 38, 11]
+            data: [1, 5, 3, 8]
         }
     ]
 };
@@ -188,15 +188,15 @@ const chartData9 = {
             strokeColor: "rgba(225, 69, 69, 0.8)",
             highlightFill: "rgba(225, 69, 69, 0.75)",
             highlightStroke: "rgba(225, 69, 69, 1)",
-            data: [30569]
+            data: [2498]
         },
         {
-            label: "This Week",
+            label: "This Day",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
             highlightStroke: "rgba(151,187,205,1)",
-            data: [9088]
+            data: [60]
         }
     ]
 };
@@ -244,7 +244,7 @@ const Reports = () =>(
       </div>
 
       <div id="MonthlyReports">
-          <h2>Monthly Reports/Weekly Reports</h2>
+          <h2>Monthly Reports/Daily Reports</h2>
       </div>
       <div id="BarChart">
           <BarChart
