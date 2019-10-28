@@ -69,7 +69,7 @@
     "redux": "^3.7.2",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.75.1",
-    "sequelize": "^4.37.6",
+    "sequelize": "^5.15.1",
     "styled-components": "^2.2.3",
     "subscriptions-transport-ws": "^0.9.1"
   },
